@@ -19,6 +19,48 @@ const loginWithEmail = (dispatch) => {
   };
 };
 
+// const loginWithEmail = (dispatch) => {
+//   return async ({ email, password, navigate }) => {
+//     try {
+//       // const response = await Api.post('user/login' , { email, password })
+//       const response = await axios.post(`${baseUrl}/user/login`, { email, password }, headers)
+
+//       if (response.data.status) {
+//         const authentication = await axios.get(`${baseUrl}/user/authentication`, headers)
+//         localStorage.setItem("currentUser" , JSON.stringify(authentication.data))
+//         dispatch({
+//           type: "set_user",
+//           payload: authentication.data
+//         })
+//         dispatch({
+//           type: "add_error",
+//           payload: {
+//             error: response.data.message,
+//             type: "success",
+//             snackBarStatus: true,
+//           },
+//         });
+//       }
+//       if (response.data.status) {
+//         navigate("/home" , {replace : true});
+//       }
+//       else{
+//         dispatch({
+//             type: "add_error",
+//             payload: {
+//               error: response.data.message,
+//               type: "error",
+//               snackBarStatus: true,
+//             },
+//           });
+//       }
+//     } catch (err) {
+//        console.log("err" , err)
+//     } 
+//   };
+// };
+
+
 const clearSnackBarMessage = (dispatch) => {
     return () => {
       dispatch({
